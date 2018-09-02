@@ -67,7 +67,7 @@ export default {
   data: function() {
     return {
       dropzoneOptions: {
-        url: "http://localhost:3030/upload",
+        url: "https://server-fqsfiqtsje.now.sh/upload",
         dictDefaultMessage:
           "Droppez votre package.json ici ou cliquez dans la zone",
         headers: { "Cache-Control": null },
@@ -79,7 +79,7 @@ export default {
       showDropzone: true,
       downloading: false,
       downloaded: false,
-      socket: io("localhost:3030"),
+      socket: io("https://server-fqsfiqtsje.now.sh"),
       totalSize: 0,
       percentage: 0
     };
@@ -126,7 +126,7 @@ export default {
         this.percentage = 80;
 
         axios({
-          url: `http://localhost:3030/download/${filename}`,
+          url: `https://server-fqsfiqtsje.now.sh/download/${filename}`,
           method: "GET",
           responseType: "blob" // important
         }).then(response => {
