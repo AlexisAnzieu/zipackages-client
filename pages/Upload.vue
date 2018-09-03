@@ -69,7 +69,7 @@ export default {
       dropzoneOptions: {
         url: "https://server-fqsfiqtsje.now.sh/upload",
         dictDefaultMessage:
-          "Droppez votre package.json ici ou cliquez dans la zone",
+          "Drop your package.json here",
         headers: { "Cache-Control": null },
         autoProcessQueue: false
       },
