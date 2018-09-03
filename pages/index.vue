@@ -9,7 +9,7 @@ import axios from "axios";
 export default {
   head() {
     return {
-      title: "pack2zip"
+      title: "Zipackages"
     };
   },
   components: {
