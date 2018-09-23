@@ -140,7 +140,7 @@ export default {
           document.body.appendChild(link);
           link.click();
           this.downloaded = true;
-          this.title = "Thanks for having using this tool !";
+          this.title = "Thanks to use this tool !";
           this.dependenciesTable = [];
         });
       });
@@ -175,7 +175,7 @@ export default {
       this.downloading = true;
 
       this.$message({
-        message: "Envoie du fichier en cours...",
+        message: "Sending file...",
         type: "info",
         duration: 2000
       });
@@ -184,7 +184,7 @@ export default {
       this.downloading = false;
 
       this.$message({
-        message: "Une erreur est survenu, veuillez recommencer",
+        message: "Error, try again please",
         type: "error",
         duration: 5000
       });
@@ -193,7 +193,7 @@ export default {
       this.socket.emit("createPackage", filename);
 
       this.$message({
-        message: "Génération du package en cours",
+        message: "Packages are being generated...",
         type: "success",
         duration: 4000
       });
