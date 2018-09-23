@@ -13,6 +13,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/vue2-dropzone@3.2.2/dist/vue2Dropzone.min.css' }
+    ],
+    script:[
     ]
   },
   /*

@@ -1,7 +1,10 @@
 <template>
+
   <section class="container">
+
     <div>
-      
+
+<iframe src="https://ghbtns.com/github-btn.html?user=AlexisAnzieu&repo=zipackages-client&type=star&count=false" frameborder="0" scrolling="0" width="50px" height="20px"></iframe>
       <h1>
         {{title || "Drop your file"}}
       
