@@ -52,9 +52,7 @@
 
 
 <script>
-
-// NEW: real progressbar
-
+// TODO:
 
 var vue2Dropzone;
 import ElementUI from "element-ui";
@@ -70,9 +68,8 @@ export default {
   data: function() {
     return {
       dropzoneOptions: {
-        url: "https://server-fqsfiqtsje.now.sh/upload",
-        dictDefaultMessage:
-          "Drop your package.json here",
+        url: "https://apizipackages.now.sh/upload",
+        dictDefaultMessage: "Drop your package.json here",
         headers: { "Cache-Control": null },
         autoProcessQueue: false
       },
@@ -82,7 +79,7 @@ export default {
       showDropzone: true,
       downloading: false,
       downloaded: false,
-      socket: io("https://server-fqsfiqtsje.now.sh"),
+      socket: io("https://apizipackages.now.sh/"),
       totalSize: 0,
       percentage: 0
     };
@@ -129,7 +126,7 @@ export default {
         this.percentage = 80;
 
         axios({
-          url: `https://server-fqsfiqtsje.now.sh/download/${filename}`,
+          url: `https://apizipackages.now.sh/download/${filename}`,
           method: "GET",
           responseType: "blob" // important
         }).then(response => {
@@ -149,7 +146,20 @@ export default {
     added: function(file) {
       var reader = new FileReader();
       reader.onload = e => {
-        let readFile = JSON.parse(e.target.result);
+        try {
+          var readFile = JSON.parse(e.target.result);
+        } catch (error) {
+          this.$message({
+            message: "Error, please drop a valid JSON format",
+            type: "error",
+            duration: 5000
+          });
+
+          this.$refs.myVueDropzone.removeAllFiles(); 
+
+          throw "parsing failure";
+        }
+
         let dependencies = {
           ...readFile.dependencies,
           ...readFile.devDependencies
