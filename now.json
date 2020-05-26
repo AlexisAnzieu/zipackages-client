@@ -1,4 +1,5 @@
 {
+  "version": 2,
     "alias": "zipackages.now.sh",
-     "type": "static"
+     "type": "static",
 }
