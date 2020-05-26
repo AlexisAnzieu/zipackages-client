@@ -1,3 +1,4 @@
 {
-    "alias": "zipackages.now.sh"
+    "alias": "zipackages.now.sh",
+     "type": "static"
 }
